@@ -1,3 +1,11 @@
+-- =====================================================
+-- File: 01_rfm_segmentation.sql
+-- Purpose: Segment customers by Recency, Frequency, Monetary value
+-- Output table: rfm_segments
+-- Depends on: orders_clean, customers_clean, payments_clean
+-- Author: Visveswaran
+-- =====================================================
+
 -- RFM Segmentation
 -- Recency: days since last purchase (as of the most recent date in the dataset)
 -- Frequency: number of distinct orders per unique customer

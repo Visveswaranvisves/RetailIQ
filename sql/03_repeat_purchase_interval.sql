@@ -1,3 +1,11 @@
+-- =====================================================
+-- File: 03_repeat_purchase_interval.sql
+-- Purpose: Calculate time interval between repeat purchases per customer
+-- Output table: [your output table name]
+-- Depends on: orders_clean, customers_clean
+-- Author: Visveswaran
+-- =====================================================
+
 -- Repeat Purchase Interval Analysis
 -- For customers with 2+ orders, calculates days between consecutive purchases
 -- using LAG() — a window function that looks at the "previous row" per customer.

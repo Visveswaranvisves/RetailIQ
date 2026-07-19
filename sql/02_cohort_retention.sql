@@ -1,3 +1,11 @@
+-- =====================================================
+-- File: 02_cohort_retention.sql
+-- Purpose: Track customer retention by monthly cohort using month_index
+-- Output table: [whatever your output table is called, e.g. cohort_retention]
+-- Depends on: orders_clean, customers_clean
+-- Author: Visveswaran
+-- =====================================================
+
 -- Cohort Retention Analysis
 -- Groups customers by the month of their first purchase (cohort),
 -- then tracks how many of that cohort purchased again in subsequent months.

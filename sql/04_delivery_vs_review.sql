@@ -1,3 +1,11 @@
+-- =====================================================
+-- File: 04_delivery_vs_review.sql
+-- Purpose: Compare delivery timeliness against customer review scores
+-- Output table: [your output table name]
+-- Depends on: orders_clean, reviews_clean (or whatever tables it actually joins)
+-- Author: Visveswaran
+-- =====================================================
+
 -- Delivery Time vs Review Score
 -- Compares actual delivery duration and delivery delay (vs estimate)
 -- against the review score customers left.
