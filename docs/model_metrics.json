@@ -1,0 +1,15 @@
+{
+  "clv_model": {
+    "baseline_mae": "fill in",
+    "tuned_mae": "fill in"
+  },
+  "churn_model": {
+    "baseline_auc": null,
+    "tuned_auc": 0.751,
+    "best_params": {
+      "learning_rate": 0.2,
+      "max_depth": 3,
+      "n_estimators": 200
+    }
+  }
+}
