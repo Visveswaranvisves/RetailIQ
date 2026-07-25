@@ -81,5 +81,10 @@ python notebooks/08_validate_sql_outputs.py
 🚧 In progress — Week 1 complete (data foundation, SQL layer, EDA).
 Week 2: CLV/churn modeling, causal uplift, fairness audit.
 
+## Status
+🚧 In progress — Week 2 complete (CLV/churn models, causal uplift analysis,
+fairness audit). See `docs/model_results_summary.md` for full results.
+Week 3: Power BI dashboard + Excel ROI calculator.
+
 ## Author
 Visveswaran
