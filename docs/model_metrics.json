@@ -22,5 +22,10 @@
       "avg_delivery_days",
       "avg_delay_days"
     ]
+  },
+  "fairness_audit": {
+    "regional_max_clv_gap_state": "fill in from Session 1 output",
+    "price_tier_max_churn_gap": "fill in from tier_summary above",
+    "note": "See docs/fairness_regional_gaps.png and docs/fairness_price_tier_gaps.png"
   }
 }
