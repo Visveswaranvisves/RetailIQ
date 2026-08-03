@@ -86,5 +86,40 @@ Week 2: CLV/churn modeling, causal uplift, fairness audit.
 fairness audit). See `docs/model_results_summary.md` for full results.
 Week 3: Power BI dashboard + Excel ROI calculator.
 
+## Power BI Dashboard
+An interactive 4-page dashboard built on the SQL/Python outputs:
+
+- **Overview** — headline metrics (total customers, revenue, churn rate, causal
+  voucher effect)
+- **Retention & Segments** — cohort retention heatmap, RFM customer segments
+- **Seller Performance** — top sellers by revenue, revenue-vs-quality scatter
+- **Geographic Overview** — state-level revenue distribution
+
+![Dashboard Overview](docs/screenshots/overview.png)
+![Retention Heatmap](docs/screenshots/retention_segments.png)
+![Seller Performance](docs/screenshots/seller_performance.png)
+![Geographic Overview](docs/screenshots/geographic.png)
+
+File: `powerbi/RetailIQ_Dashboard.pbix`
+
+## Excel ROI Calculator
+A scenario-driven what-if tool translating the causal churn-reduction estimate
+into a business ROI projection. Includes a Conservative/Moderate/Aggressive
+scenario dropdown and a sensitivity table on repeat-purchase assumptions.
+
+![Excel ROI Summary](docs/screenshots/excel_roi_summary.png)
+
+At 30% voucher adoption (Moderate scenario), the model projects a net positive
+ROI of approximately [your actual number] BRL, driven by the measured 17.48
+percentage-point causal reduction in churn from voucher usage.
+
+File: `excel/RetailIQ_ROI_Calculator.xlsx`
+
+## Status
+🚧 In progress — Week 3 complete (Power BI dashboard, Excel ROI calculator,
+cross-tool reconciliation, self-review pass complete).
+Week 4: final README case study, architecture diagram, walkthrough video,
+resume prep.
+
 ## Author
 Visveswaran
