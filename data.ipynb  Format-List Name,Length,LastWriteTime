@@ -1,0 +1,11 @@
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex abccb0c..e7114a1 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -6,3 +6,4 @@[m [mdata/*.csv[m
+ .ipynb_checkpoints/[m
+ [m
+ *.pkl[m
+[32m+[m[32mpowerbi/data/*.csv[m
+\ No newline at end of file[m

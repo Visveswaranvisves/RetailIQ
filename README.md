@@ -121,5 +121,18 @@ cross-tool reconciliation, self-review pass complete).
 Week 4: final README case study, architecture diagram, walkthrough video,
 resume prep.
 
+- **Catching a flawed assumption before it shipped:** the first version of the
+  ROI calculator applied the causal voucher effect (0.1748) as if it were a
+  churn *reduction* — but the causal analysis had actually found the opposite:
+  vouchers are associated with a churn *increase*, consistent with reactive
+  issuance to at-risk customers rather than proactive retention. Rather than
+  ship a business tool built on a misapplied number, the ROI model was rebuilt
+  around a break-even framework — sizing the addressable high-risk population
+  and calculating the minimum churn-prevention rate a proactive program would
+  need to hit to pay for itself (10.2%), instead of assuming an unverified
+  success rate. This is the difference between a dashboard that looks
+  complete and one that's actually honest about what the data supports.
+
+  
 ## Author
 Visveswaran
