@@ -133,6 +133,21 @@ resume prep.
   success rate. This is the difference between a dashboard that looks
   complete and one that's actually honest about what the data supports.
 
-  
+  ## Architecture
+
+![RetailIQ Architecture](docs/architecture_diagram.png)
+
+Data flows through five layers, each depending on the one before it:
+
+1. **Data Source** — Olist's 8 relational tables loaded into SQLite
+2. **SQL Layer** — cleaning + four analytical queries (RFM, cohort retention,
+   purchase intervals, delivery-vs-review) using window functions
+3. **Python/ML Layer** — feature engineering feeds a CLV regression and a churn
+   classifier, both explained via SHAP
+4. **Causal Inference & Fairness** — a DoWhy causal model isolates the true
+   effect of voucher usage on churn (validated with refutation tests); a
+   parallel fairness audit checks both models for regional and price-tier bias
+5. **Business Translation Layer** — Power BI dashboard and Excel ROI calculator
+   turn the causal estimate into a scenario-driven revenue projection
 ## Author
 Visveswaran
