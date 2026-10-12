@@ -48,11 +48,13 @@ def customer_summary(frame):
 
 
 def chart(fig):
-    fig.update_layout(template='plotly_white', margin=dict(l=10,r=10,t=40,b=10))
+    fig.update_layout(template='plotly_white', height=370, paper_bgcolor='white', plot_bgcolor='white', font=dict(family='Arial',color='#52647b',size=12), title_font=dict(size=16,color='#16243a'), margin=dict(l=25,r=25,t=60,b=30), colorway=['#087f73','#3979b7','#93b9b0','#dfb86c','#8490b8'])
+    fig.update_xaxes(showgrid=False, automargin=True)
+    fig.update_yaxes(gridcolor='#eef2f7', zeroline=False, automargin=True)
     st.plotly_chart(fig, use_container_width=True)
 
-st.title('RetailIQ')
-st.caption('Retail performance, customer retention and intervention economics • Olist historical data')
+st.markdown('\n<style>\n.stApp{background:#f4f7fb;color:#16243a}\n[data-testid="stHeader"]{background:rgba(244,247,251,.96)}\n.block-container{padding-top:2.4rem;padding-bottom:2rem;max-width:1440px}\nh1,h2,h3{letter-spacing:-.035em;color:#16243a}\nh3{font-size:1.35rem!important}\n[data-testid="stSidebar"]{background:#fff;border-right:1px solid #e2e8f0}\n[data-testid="stSidebar"] .block-container{padding-top:2rem}\n[data-testid="stMetric"]{background:#fff;border:1px solid #e0e8f1;border-radius:16px;padding:19px 20px;box-shadow:0 4px 16px #172b4d05;min-height:118px}\n[data-testid="stMetricLabel"]{color:#5b6b82;font-size:.8rem}\n[data-testid="stMetricValue"]{font-size:clamp(1.35rem,2vw,2rem);font-weight:650;letter-spacing:-.04em}\n[data-testid="stCaptionContainer"]{color:#607087}\n[data-testid="stVerticalBlockBorderWrapper"]>div{border-radius:16px}\n[data-testid="stPlotlyChart"], [data-testid="stDataFrame"]{background:white;border:1px solid #e0e8f1;border-radius:16px;overflow:hidden}\n[data-baseweb="tab-list"]{gap:8px;background:#e9eef5;border-radius:12px;padding:5px;margin-bottom:22px}\nbutton[data-baseweb="tab"]{padding:10px 20px;border-radius:9px;height:44px}\nbutton[data-baseweb="tab"][aria-selected="true"]{background:white;color:#087f73;box-shadow:0 2px 6px #172b4d10}\n[data-baseweb="tab-highlight"],[data-baseweb="tab-border"]{display:none}\n.stButton>button[kind="primary"],.stFormSubmitButton>button[kind="primary"]{background:#087f73;border:0;border-radius:10px;min-height:46px;font-weight:650}\n.stButton>button,.stDownloadButton>button{border-radius:10px}\n[data-testid="stFileUploaderDropzone"]{border:1px dashed #91abc6;border-radius:16px;background:#edf4fb;padding:28px}\n[data-testid="stAlert"]{border-radius:12px}\n[data-testid="stSidebar"] [role="radiogroup"]{gap:4px}\n[data-testid="stSidebar"] [role="radiogroup"] label{padding:10px 12px;border-radius:10px}\n[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked){background:#e8f3f2;font-weight:600}\n.brand{display:flex;align-items:center;gap:10px;font-weight:750;font-size:21px;letter-spacing:-.7px;margin-bottom:22px}\n.brand-mark{background:#087f73;color:white;display:inline-flex;align-items:center;justify-content:center;width:35px;height:35px;border-radius:10px;font-size:17px}\n.hero{background:linear-gradient(110deg,#112339,#203e57);color:white;border-radius:22px;padding:32px 36px;margin:8px 0 28px;position:relative;overflow:hidden;border:1px solid #314d66}\n.hero h1{color:white!important;font-size:clamp(2rem,3.5vw,3rem);font-weight:720;margin:8px 0 12px;padding:0;max-width:850px}\n.hero p{color:#c6d6e7;max-width:750px;line-height:1.6;margin:0}\n.eyebrow{color:#8de0cf;font-size:11px;letter-spacing:2px;font-weight:700;text-transform:uppercase}\n.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}\n.chip{font-size:11px;padding:6px 11px;border:1px solid #536b80;border-radius:6px;color:#e2edf7}\n.empty{border:1px dashed #c6d3e0;background:#f9fbfd;border-radius:16px;padding:48px 26px;text-align:center;color:#66788f;min-height:235px}\n.empty strong{display:block;color:#243c55;font-size:19px;margin:14px 0 9px}\n.section-label{font-size:11px;font-weight:750;letter-spacing:1.5px;color:#087f73;text-transform:uppercase;margin:4px 0 10px}\n.footer{border-top:1px solid #dce5ef;padding-top:18px;margin-top:36px;font-size:11px;color:#6a7b90;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}\n@media(max-width:768px){.block-container{padding:1.5rem 1rem}.hero{padding:25px 22px}.hero h1{font-size:2rem} [data-testid="stMetric"]{padding:15px;min-height:100px}[data-testid="stMetricValue"]{font-size:1.6rem}button[data-baseweb="tab"]{padding:8px 12px;font-size:12px}}\n</style>\n', unsafe_allow_html=True)
+st.markdown('<div class="brand"><span class="brand-mark">R</span>RetailIQ</div><div class="hero"><div class="eyebrow">Commerce intelligence</div><h1>Every order. A clearer picture.</h1><p>Explore sales, understand retention and test the economics of your next customer intervention.</p><div class="chips"><span class="chip">OLIST DATASET</span><span class="chip">HISTORICAL ANALYSIS</span><span class="chip">BRL</span></div></div>', unsafe_allow_html=True)
 try:
     orders, items = load_data()
 except Exception as exc:
@@ -60,6 +62,7 @@ except Exception as exc:
     st.exception(exc)
     st.stop()
 
+st.sidebar.markdown('<div class="brand"><span class="brand-mark">R</span>RetailIQ</div>', unsafe_allow_html=True)
 page = st.sidebar.radio('Explore', ['Sales overview','Customers & retention','Sellers & delivery','ROI calculator','Research findings'])
 delivered = orders.loc[orders.order_status.eq('delivered')].copy()
 minimum, maximum = delivered.order_purchase_timestamp.min().date(), delivered.order_purchase_timestamp.max().date()
@@ -80,7 +83,7 @@ if page == 'Sales overview':
     st.subheader('Sales overview')
     total = frame.payment_value.sum()
     cols = st.columns(4)
-    cols[0].metric('Collected payments', f'R$ {total:,.0f}')
+    cols[0].metric('Collected payments', f'R$ {total / 1_000_000:,.2f}M' if total >= 1_000_000 else f'R$ {total:,.0f}')
     cols[1].metric('Delivered orders', f'{len(frame):,}')
     cols[2].metric('Unique customers', f'{frame.customer_unique_id.nunique():,}')
     cols[3].metric('Average payment / order', f'R$ {frame.payment_value.mean():,.2f}')
@@ -181,5 +184,4 @@ else:
         if path.exists():
             with st.expander(caption): st.image(str(path), use_container_width=True)
 
-st.divider()
-st.caption('RetailIQ • Visveswaran V • Portfolio demonstration | Data: Olist Brazilian E-Commerce Public Dataset')
+st.markdown('<div class="footer"><span>RetailIQ · Built by Visveswaran V</span><span>Olist historical data · Portfolio research</span></div>', unsafe_allow_html=True)
